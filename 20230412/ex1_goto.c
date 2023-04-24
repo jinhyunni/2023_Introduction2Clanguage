@@ -6,7 +6,7 @@ int main()
 {
 	int i, j;
 
-	for(i=1; i<=1e4; i++;)
+	for(i=1; i<=1e4; i++)
 	{
 		for(j=1; j<=10; j++)
 		{
@@ -20,7 +20,7 @@ int main()
 	exit(0);
 
 	end:
-		printf("\n Input from keyboard")
+		printf("\n Input from keyboard");
 
 	return 0;
 }
