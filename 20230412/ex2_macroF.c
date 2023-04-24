@@ -11,7 +11,7 @@ int main()
 	printf("Enter circle's radius: ");
 	scanf("%d", &radius);
 	
-	printf("원의 둘레: %.2f(cm)\n", CIRCUM(radius));
-	printf("원의 면적: %.2f(cm)", AREA(radius));
+	printf("원의 둘레: %-5.3f(cm)\n", CIRCUM(radius));
+	printf("원의 면적: %-4.2f(cm)", AREA(radius));
 	
 }
