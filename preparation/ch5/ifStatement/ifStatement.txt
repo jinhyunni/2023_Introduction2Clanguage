@@ -1,0 +1,178 @@
+     1	#include <stdio.h>
+     2	#include <stdlib.h>
+     3	
+     4	int main()
+     5	{
+     6		int score;
+     7		char grade;
+     8	
+     9		printf("Enter student's grade: ");
+    10		scanf("%d", &score);
+    11	
+    12		if(score >= 90)
+    13		{
+    14			grade = 'A';
+    15			printf("Student's score: %d, Student's Grade: %c", score, grade);
+    16		}
+    17	
+    18		else if(score >= 80)
+    19		{
+    20			grade = 'B';
+    21			printf("Student's score: %d, Student's Grade: %c", score, grade);
+    22		}
+    23	
+    24		else if(score >= 70)
+    25		{
+    26			grade = 'C';
+    27			printf("Student's score: %d, Student's Grade: %c", score, grade);
+    28		}
+    29	
+    30		else if(score >= 60)
+    31		{
+    32			grade = 'D';
+    33			printf("Student's score: %d, Student's Grade: %c", score, grade);
+    34		}
+    35	
+    36		else
+    37			printf("Invalid score input! Try again!");
+    38			exit(0);
+    39	
+    40	
+    41		return 0;
+    42	}
+     1	#include <stdio.h>
+     2	#include <stdlib.h>
+     3	
+     4	int main()
+     5	{
+     6		char gender, marry, Army;
+     7	
+     8		int  children=0, point = 0;
+     9		
+    10		fflush(stdin);
+    11		printf("Enter your gender(male: m, female: f): ");
+    12		scanf("%c", &gender);
+    13		
+    14	
+    15		if(gender == 'f')
+    16		{
+    17			printf("Are you married(yes: y No:n) ");
+    18			fflush(stdin);
+    19			scanf("%c", &marry);
+    20			if(marry == 'y')
+    21			{
+    22				point += 1;
+    23	
+    24				printf("Enter the number of your children: ");
+    25				scanf("%d", &children);
+    26				if(children == 0)
+    27					point += 0;
+    28	
+    29				else if(children == 1)
+    30					point += 1;
+    31				
+    32				else if(children >= 2)
+    33					point += 2;
+    34	
+    35				else
+    36				{
+    37					printf("Invalid input! Try again");
+    38					exit(0);
+    39				}
+    40	
+    41			}
+    42			else
+    43			{	
+    44				children = 0;	
+    45			}
+    46	
+    47			printf("Gender: %c\n", gender);
+    48			printf("Married: %c\n", marry);
+    49			printf("Number of children: %d\n", children);
+    50			printf("point: %d\n", point);
+    51					
+    52	
+    53		}
+    54	
+    55		else if(gender == 'm')
+    56		{
+    57			printf("Did you served for Army(Yes: y, No: n)?");
+    58			fflush(stdin);
+    59			scanf("%c", &Army);
+    60			if(Army == 'y')
+    61			{
+    62				point += 1;
+    63	
+    64				printf("Are you married?(Yes: y, No: n)");
+    65				fflush(stdin);
+    66				scanf("%c", &marry);
+    67				if(marry == 'y')
+    68					point += 1;
+    69			}
+    70			else
+    71			{
+    72				marry = 'n';
+    73			}
+    74	
+    75			printf("Gender: %c\n", gender);
+    76			printf("Army service: %c\n", Army);
+    77			printf("Married: %c\n", marry);
+    78			printf("point: %d\n", point);
+    79			
+    80		}
+    81		
+    82		else
+    83			printf("Invalid gender input");
+    84	
+    85	
+    86		return 0;
+    87	}
+     1	#include <stdio.h>
+     2	
+     3	int main()
+     4	{
+     5		int row, i, j;
+     6	
+     7		printf("Enter an integer: ");
+     8		scanf("%d", &row);
+     9		
+    10	
+    11		//upper section
+    12		for(i=1; i<=row-1; i++)
+    13		{
+    14			for(j=1; j<=i-1; j++)
+    15				printf(" ");
+    16			for(j=1; j<=(2*row+1)-2*i; j++)
+    17				printf("*");
+    18			for(j=1; j<=i-1; j++)
+    19				printf(" ");
+    20			//line change
+    21			printf("\n");
+    22		}
+    23		
+    24		//middle section
+    25		for(i=1; i<=row-1; i++)
+    26				printf(" ");
+    27		
+    28		printf("*");
+    29	
+    30		for(i=1; i<=row-1; i++)
+    31				printf(" ");
+    32		//line change
+    33		printf("\n");
+    34		
+    35		//lower section
+    36		for(i=row-1; i>=1; i--)
+    37		{
+    38			for(j=1; j<=i-1; j++)
+    39				printf(" ");
+    40			for(j=1; j<=(2*row+1)-2*i; j++)
+    41				printf("*");
+    42			for(j=1; j<=i-1; j++)
+    43				printf(" ");
+    44			//line change
+    45			printf("\n");
+    46		}
+    47	
+    48		return 0;
+    49	}

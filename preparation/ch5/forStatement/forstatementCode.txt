@@ -1,0 +1,197 @@
+     1	#include <stdio.h>
+     2	
+     3	int main()
+     4	{	
+     5		
+     6		int i;
+     7		int step, mult=1, sum=0;
+     8	
+     9		printf("Enter an integer: ");
+    10		scanf("%d", &step);
+    11	
+    12		for(i=1; i<=step; i++)
+    13		{
+    14			sum += i;
+    15			mult *= i;
+    16		}
+    17	
+    18		printf("The sum of 1 to %d is %d\n", step, sum);
+    19		printf("The multiplication from 1 to %d is %d\n", step, mult);
+    20	
+    21	
+    22	
+    23		return 0;
+    24	}
+     1	#include <stdio.h>
+     2	
+     3	int main()
+     4	{
+     5		int dice1, dice2;
+     6		int i, j, count=0;
+     7	
+     8		printf("Dice1		Dice2\n");
+     9	
+    10	
+    11		for(i=1; i<=6; i++)
+    12		{	
+    13			dice1 = i;	
+    14	
+    15			for(j=1; j<=6; j++)
+    16			{
+    17				dice2 = j;
+    18				if(dice1+dice2 == 7)
+    19				{
+    20					count+=1;
+    21					printf("%d\t\t%d\n", dice1, dice2);
+    22				}
+    23			}
+    24	
+    25		}
+    26	
+    27		printf("The number: %d\n", count);
+    28	
+    29	
+    30		return 0;
+    31	}
+     1	#include <stdio.h>
+     2	
+     3	int main()
+     4	{
+     5		int row, i, j;
+     6	
+     7		printf("Enter an integer: ");
+     8		scanf("%d", &row);
+     9	
+    10		//upper part
+    11		for(i=1; i<=row; i++)
+    12		{
+    13			for(j=1; j<=(row+1-i); j++)
+    14			{
+    15				printf("*");
+    16			}
+    17	
+    18			for(j=1; j<=2*i-1; j++)
+    19			{
+    20				printf(" ");
+    21			}
+    22	
+    23			for(j=1; j<=(row+1-i); j++)
+    24			{
+    25				printf("*");
+    26			}
+    27	
+    28			printf("\n");
+    29		}
+    30		
+    31		//middle part
+    32		for(i=1; i<=2*row+1; i++)
+    33		{
+    34			printf(" ");
+    35		}
+    36	
+    37		printf("\n");
+    38	
+    39		//lower part
+    40		for(i=row; i>=1; i--)
+    41		{
+    42			for(j=1; j<=(row+1-i); j++)
+    43			{
+    44				printf("*");
+    45			}
+    46	
+    47			for(j=1; j<=2*i-1; j++)
+    48			{
+    49				printf(" ");
+    50			}
+    51	
+    52			for(j=1; j<=(row+1-i); j++)
+    53			{
+    54				printf("*");
+    55			}
+    56			printf("\n");
+    57		}
+    58			
+    59		return 0;
+    60	}
+     1	#include <stdio.h>
+     2	
+     3	int main()
+     4	{
+     5		int row, i, j;
+     6	
+     7		printf("Enter an integer: ");
+     8		scanf("%d", &row);
+     9	
+    10		//upper part
+    11		for(i=1; i<=row; i++)
+    12		{
+    13			for(j=1; j<=(row+1-i); j++)
+    14			{
+    15				printf(" ");
+    16			}
+    17	
+    18			for(j=1; j<=2*i-1; j++)
+    19			{
+    20				printf("*");
+    21			}
+    22	
+    23			for(j=1; j<=(row+1-i); j++)
+    24			{
+    25				printf(" ");
+    26			}
+    27	
+    28			printf("\n");
+    29		}
+    30		
+    31		//middle part
+    32		for(i=1; i<=2*row+1; i++)
+    33		{
+    34			printf("*");
+    35		}
+    36	
+    37		printf("\n");
+    38	
+    39		//lower part
+    40		for(i=row; i>=1; i--)
+    41		{
+    42			for(j=1; j<=(row+1-i); j++)
+    43			{
+    44				printf(" ");
+    45			}
+    46	
+    47			for(j=1; j<=2*i-1; j++)
+    48			{
+    49				printf("*");
+    50			}
+    51	
+    52			for(j=1; j<=(row+1-i); j++)
+    53			{
+    54				printf(" ");
+    55			}
+    56			printf("\n");
+    57		}
+    58			
+    59		return 0;
+    60	}
+     1	#include <stdio.h>
+     2	
+     3	int main()
+     4	{
+     5		//홀수들의 합이 100000이 넘게되는 홀수 찾기!
+     6		
+     7		int i, sum=0;
+     8		
+     9	
+    10		for(i = 1; ; i = i+2){
+    11		
+    12			sum += i;
+    13	
+    14			if(sum >= 100000)
+    15				break;
+    16		
+    17		}
+    18		
+    19		printf("Sum is %d, and i is %d", sum, i);
+    20	
+    21		return 0;
+    22	}
