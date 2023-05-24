@@ -17,20 +17,14 @@ int main()
 		{	
 			if(n%i==0)
 				sum+=1;
-
 		}
 		
 		if(sum==0)
 			printf("%d ", n);
 
-
-
-		n++;
 		sum = 0;
+		n++;
 	}
-			
-
-
 
 	return 0;
 }
