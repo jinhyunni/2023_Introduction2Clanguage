@@ -1,0 +1,4 @@
+ex1: 두 변수에 저장된 값을 바꾸는 함수/ pass by value: main fuction에 저장되어있는 실제 데이터를 바꾸지 못한다.
+ex2: 두 변수에 저장된 값을 바꾸는 함수/ pass by reference: main function에 저장되어있는 실제 데이터를 바꾼다. 메모리를 공유하는 개념!!!!
+ex3: 배열을 함수로 전달하기, 배열에서 한 원소를 함수에 전달하기/pass by value
+ex4: 배열을 함수로 전달하기, 배열 전체를 전달하기
