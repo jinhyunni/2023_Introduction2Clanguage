@@ -7,7 +7,7 @@ int main()
 	char seoul[6] = {'s', 'e', 'o', 'u', 'l'};	//문자열
 	char busan[6] = "busan";	//문자열
 
-	printf("%s\n", seoul);
+	printf("%s\n", seoul);	//주소를 넘겨주면 null문자가 나오기 전까지 출력!
 	printf("%s\n", busan);
 	printf("\n");
 
