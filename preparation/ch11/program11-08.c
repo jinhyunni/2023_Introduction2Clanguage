@@ -2,6 +2,8 @@
 
 #define N 100
 
+int count;	//전역변수 : 자동으로 0으로 초기화 됨
+
 struct person{
 	
 		char name[10];
@@ -9,16 +11,17 @@ struct person{
 		int age;
 };
 
-void input_info(struct person [], int *);
-void print_info(struct person[], int *);
+void input_info(struct person []);	//학생의 정보를 입력하는 함수
+void print_info(struct person []);	//학생의 정보를 출력하는 함수
 
 int main()
 {	
-	int count=0, i;	
+	int i;	
 	struct person grp[100];
 	
 	//사용자 정보 입력하기
-	input_info(grp, &count);	//count: 입력 받은 구조체의 개수
+	input_info(grp);	//count: 입력 받은 구조체의 개수
+								//배열의 모든 원소를 함수로 넘길때는 (only) pass by reference method
 	
  //	for(i=0; i<count; i++)
  //	{
@@ -27,7 +30,7 @@ int main()
  //	}
 
 	//사용자 정보 출력하기
-	print_info(grp, &count);	//함수에 배열 전체를 넘겨줌 -> 배열 전체를 넘기는 방법: (only) pass by reference!
+	print_info(grp);	//함수에 배열 전체를 넘겨줌 -> 배열 전체를 넘기는 방법: (only) pass by reference!
 
 	/*
 		실인수가 가지고 있는 데이터: 배열의 첫 원소의 주소, 즉 가인수는 "주소"를 전달 받으므로...
@@ -42,21 +45,21 @@ int main()
 
 }
 
-void input_info(struct person grp[], int *count)
+void input_info(struct person grp[])
 {
 	int i=1;
 
-	while(i==1 && *count < 100)
+	while(i==1 && count < 100)
 	{
 		printf("name: ");
  //		scanf("%s", (grp+count)->name);
-		gets((grp+ *count)->name);
+		gets((grp+count)->name);	//name member: 배열! 따라서 배열명이 곧 주소!
 
 		printf("gender(M/F): ");
-		scanf("%c", &(grp+* count)->gender);
+		scanf("%c", &(grp+count)->gender);
 
 		printf("age: ");
-		scanf("%d", &(grp+ *count)->age);
+		scanf("%d", &(grp+count)->age);
 		
 		printf("Continue(1)/Stop(0):");
 		scanf("%d", &i);
@@ -64,19 +67,19 @@ void input_info(struct person grp[], int *count)
 
 		
 		fflush(stdin);
-		(*count)++;
+		count++;
 
 	}
 }
 
-void print_info(struct person *grp, int *num)	//가인수를 struct person grp[]으로 해도 되는가? -> 너는 pass by vlaue?
+void print_info(struct person *grp)	//가인수를 struct person grp[]으로 해도 되는가? -> 너는 pass by vlaue?
 {
 	int i;
 
 	printf("=====User information=====\n");
 	printf("name	gender	age\n");
 	printf("==========================\n");
-	for(i=0; i<*num; i++)
+	for(i=0; i<count; i++)
 	{
 		printf("%s	  %c	%d\n", (grp+i)->name, (grp+i)->gender, (grp+i)->age);
 		/*
