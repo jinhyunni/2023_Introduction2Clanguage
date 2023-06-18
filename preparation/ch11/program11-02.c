@@ -1,13 +1,11 @@
 #include <stdio.h>
 
-typedef struct person PERSON;
-
-struct person{
+typedef struct person{
 	
 		char name[7];
-		char gender;
+		char gender;	
 		int age;
-};
+} PERSON;
 
 
 int main()

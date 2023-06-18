@@ -40,6 +40,7 @@ int main()
 
 	printf("====Information====\n\n");
 	printf("name/	gender/	age\n");
+	
 	for(i=0; i<N; i++)
 		printf("%s,   %c,   %d\n", group[i].name, group[i].gend, group[i].age);
 	
